@@ -1,0 +1,22 @@
+{
+  "hosting": {
+    "public": "client/public",
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "**/**",
+        "function": "nextjsServer"
+      }
+    ]
+  },
+  "functions": {
+    "source": ".",
+    "ignore": [
+      ".firebase/**",
+      ".firebaserc",
+      "firebase.json",
+      "**/node_modules/**",
+      "**/public/**"
+    ]
+  }
+}

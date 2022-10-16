@@ -1,0 +1,62 @@
+@layer components {
+  .tooltip-arrow {
+    @apply w-2 h-2 absolute;
+
+    &::before {
+      @apply transform;
+      content: '';
+    }
+
+    &&::before {
+      @apply rotate-45 w-2 h-2 absolute z-0 bg-gray-700;
+    }
+  }
+
+  .tooltip > div {
+    @apply relative;
+  }
+
+  .tooltip[data-popper-placement^='bottom'] {
+    & > div {
+      @apply mt-1.5;
+    }
+
+    .tooltip-arrow {
+      @apply -mt-1 top-0 left-0;
+    }
+  }
+
+  .tooltip[data-popper-placement^='top'] {
+    & > div {
+      @apply mb-1.5;
+    }
+
+    .tooltip-arrow {
+      @apply -mb-1 bottom-0 left-0;
+    }
+  }
+
+  .tooltip[data-popper-placement^='right'] {
+    & > div {
+      @apply ml-1.5;
+    }
+
+    .tooltip-arrow {
+      @apply -ml-1;
+    }
+  }
+
+  .panel-item {
+    @apply text-left relative w-full rounded-md border border-gray-300 bg-white px-3 py-2 transition duration-150 sm:text-sm sm:leading-5 focus-within:outline-none focus-within:border-blue-300;
+  }
+
+  .button-default {
+    @apply inline-flex justify-center items-center text-base sm:text-sm leading-6 sm:leading-5 whitespace-nowrap font-medium transition ease-in-out duration-150;
+  }
+
+  .audio-bar {
+    wave {
+      overflow: hidden !important;
+    }
+  }
+}
